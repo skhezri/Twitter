@@ -9,9 +9,8 @@
 #import "TimelineViewController.h"
 #import "APIManager.h"
 #import "TweetCell.h"
-@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate>
-
-
+#import "ComposeViewController.h"
+@interface TimelineViewController () <UITableViewDataSource, UITableViewDelegate, ComposeViewControllerDelegate>
 
 @end
 
@@ -19,8 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
     self.tableView.delegate=self;
     self.tableView.dataSource=self;
     [self fetchTweets];
@@ -54,9 +51,6 @@
 -(void) beginRefresh: (UIRefreshControl *) refreshControl {
     [self fetchTweets];
     [refreshControl endRefreshing];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,16 +58,24 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
+-(void) didTweet:(Tweet *)tweet{
+    NSMutableArray*timelineTweets= [NSMutableArray array];
+    tweet=[[Tweet alloc]init];
+    [timelineTweets addObject:tweet];
+    [self.tableView reloadData];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    UINavigationController *navigationController = [segue destinationViewController];
+    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+    composeController.delegate = self;
 }
-*/
-
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     TweetCell *cell= [tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];

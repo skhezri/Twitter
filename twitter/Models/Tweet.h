@@ -11,7 +11,6 @@
 
 @interface Tweet : NSObject
 
-
 @property (nonatomic, strong) NSString *idStr;
 @property (strong, nonatomic) NSString *text;
 @property (nonatomic) int favoriteCount;
@@ -25,6 +24,7 @@
 @property (strong, nonatomic) User *retweetedByUser;//user who retweeted if the tweet is retweeted
 
 +(NSMutableArray*) tweetsWithArray: (NSArray* )dictionaries;
+-(instancetype) initWithDictionary: (NSDictionary *) dictionary;
 
 
 @end

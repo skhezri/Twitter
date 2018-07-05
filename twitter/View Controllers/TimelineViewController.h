@@ -10,7 +10,7 @@
 
 @interface TimelineViewController : UIViewController
 
-@property (strong, nonatomic) NSArray *timelineTweets;
+@property (strong, nonatomic) NSMutableArray *timelineTweets;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
 

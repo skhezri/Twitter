@@ -21,10 +21,8 @@
     // Configure the view for the selected state
 }
 
-
 -(void) setTweet:(Tweet *)tweet{
     _tweet=tweet;
-    
     self.tweetText.text=tweet.text;
     self.name.text=tweet.user.name;
     self.date.text=tweet.createdAtString;
