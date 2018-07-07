@@ -14,7 +14,8 @@
     self=[super init];
     if(self){
         self.name=dictionary[@"name"];
-        self.screenName= dictionary[@"screen_name"];
+        NSString * twitterHandle= dictionary[@"screen_name"];
+        self.screenName= [ NSString stringWithFormat:@"%@%@", @"@", twitterHandle];
         self.profilePic=[NSURL URLWithString: dictionary[@"profile_image_url_https"]];
     }
     

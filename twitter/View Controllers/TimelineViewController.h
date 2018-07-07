@@ -13,6 +13,7 @@
 @property (strong, nonatomic) NSMutableArray *timelineTweets;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl* refreshControl;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *composeTweetButton;
 
 
 @end

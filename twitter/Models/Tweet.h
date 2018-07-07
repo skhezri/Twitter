@@ -19,6 +19,8 @@
 @property (nonatomic) BOOL retweeted;
 @property (strong, nonatomic) User *user; //contains name and screenname of the user
 @property (strong, nonatomic) NSString * createdAtString;
+@property (strong, nonatomic) NSString * createdAtString2;
+
 
 //For Retweets
 @property (strong, nonatomic) User *retweetedByUser;//user who retweeted if the tweet is retweeted

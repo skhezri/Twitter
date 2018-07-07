@@ -8,6 +8,7 @@
 #import "TweetCell.h"
 #import "UIImageView+AFNetworking.h"
 #import "APIManager.h"
+#import "DateTools.h"
 
 @implementation TweetCell
 
@@ -91,6 +92,8 @@
     self.date.text=tweet.createdAtString;
     self.tweetText.text=tweet.text;
     self.screenName.text=tweet.user.screenName;
+    self.retweetCountLabel.text= [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
+    self.favoriteCountLabel.text= [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
     [self.profilePic setImageWithURL:tweet.user.profilePic];
 }
 

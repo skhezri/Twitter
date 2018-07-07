@@ -14,7 +14,8 @@
 
 
 @interface ComposeViewController ()
-@property (weak, nonatomic) IBOutlet UITextView *composeText;
+
+
 
 @end
 
@@ -23,6 +24,22 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.composeText.delegate=self;
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    // TODO: Check the proposed new text character count
+    // Allow or disallow the new text
+    int characterLimit = 140;
+    
+    // Construct what the new text would be if we allowed the user's latest edit
+    NSString *newText = [self.composeText.text stringByReplacingCharactersInRange:range withString:text];
+    
+    
+    // TODO: Update Character Count Label
+    self.characterCount.text=[NSString stringWithFormat:@"%d", 140-self.composeText.text.length];
+    
+    // The new text should be allowed? True/False
+    return newText.length < characterLimit;
 }
 
 - (void)didReceiveMemoryWarning {
