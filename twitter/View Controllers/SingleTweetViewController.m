@@ -24,9 +24,12 @@
 
 @end
 
+//Details view page for a specific tweet
 @implementation SingleTweetViewController
 
+//Connects to the favorite button
 - (IBAction)didTapFavorite:(id)sender {
+   //Increases the favorite count
     if(self.tweet.favorited==NO){
         self.tweet.favorited=YES;
         self.tweet.favoriteCount+=1;
@@ -40,6 +43,7 @@
             }
         }];
     } else{
+        //Decreases the favorite count
         self.tweet.favorited=NO;
         self.tweet.favoriteCount-=1;
         self.favButton.selected=NO;
@@ -55,8 +59,9 @@
     
     [self refreshFavoriteData];
 }
-
+//Connects to the retweet button
 - (IBAction)didTapRetweet:(UIButton *)sender {
+    //Increases the retweet count
     if(self.tweet.retweeted==NO){
         self.tweet.retweeted=YES;
         self.tweet.retweetCount+=1;
@@ -71,6 +76,7 @@
         }];
     }
     else{
+    //Decreases the favorite count
         self.tweet.retweeted=NO;
         self.tweet.retweetCount-=1;
         self.rtButton.selected=NO;
@@ -91,7 +97,7 @@
     
 }
 
-
+//Loads the SingleTweetViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tweetText.text=self.tweet.text;
@@ -107,21 +113,19 @@
     [self.userHandle sizeToFit];
     self.date.text=self.tweet.createdAtString2;
     self.time.text=self.tweet.createdAtString;
-    
-    // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-
+//Updates the favorite count label
 -(void) refreshFavoriteData{
     NSString* favCountString=[NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
     self.favCountLabel.text=favCountString;
 }
-
+//Updates the retweet count label 
 -(void) refreshRetweetData{
     NSString* retweetCountString= [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
     self.rtCountLabel.text=retweetCountString;

@@ -49,7 +49,6 @@ static NSString * const consumerSecret = @"rgvUwGbhtTdYNTiVCQGl9iaaUxMsWmEZX5HR7
 }
 
 - (void)getHomeTimelineWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion {
-    
     [self GET:@"1.1/statuses/home_timeline.json"
    parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSArray *  _Nullable tweetDictionaries) {
        
@@ -59,20 +58,6 @@ static NSString * const consumerSecret = @"rgvUwGbhtTdYNTiVCQGl9iaaUxMsWmEZX5HR7
    }
       failure:^ (NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error){
           completion(nil, error);
-
-       
-       
-//   } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-//
-//       NSArray *tweetDictionaries = nil;
-//
-//       // Fetch tweets from cache if possible
-//       NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"hometimeline_tweets"];
-//       if (data != nil) {
-//           tweetDictionaries = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-//       }
-//
-//       completion(tweetDictionaries, error);
    }];
     
     
@@ -88,6 +73,7 @@ static NSString * const consumerSecret = @"rgvUwGbhtTdYNTiVCQGl9iaaUxMsWmEZX5HR7
         completion(nil,error);
     }];
 }
+
 
 -(void) favorite:(Tweet *)tweet completion:(void (^)(Tweet *, NSError *))completion{
     NSString* urlString= @"1.1/favorites/create.json";

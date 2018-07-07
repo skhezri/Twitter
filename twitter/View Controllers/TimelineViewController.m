@@ -19,6 +19,7 @@
 
 @implementation TimelineViewController
 
+//Loads the user's main timeline
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate=self;
@@ -47,10 +48,8 @@
          [self.tableView reloadData];
     }];
     
-    
-    
 }
-
+//refreshes tweets in case a new one has been posted
 -(void) beginRefresh: (UIRefreshControl *) refreshControl {
     [self fetchTweets];
     [refreshControl endRefreshing];

@@ -8,6 +8,8 @@
 
 #import "ProfileViewController.h"
 
+
+//Did not have the chance to fully implement the profile view controller 
 @interface ProfileViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *header;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePic;
@@ -22,14 +24,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

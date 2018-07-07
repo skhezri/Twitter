@@ -19,8 +19,8 @@
 		6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AD2790820BCC04D0085BC29 /* TimelineViewController.m */; };
 		FC10D62F20EACAE7001497B5 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10D62E20EACAE7001497B5 /* User.m */; };
 		FC10D63220EAD268001497B5 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = FC10D63120EAD268001497B5 /* Tweet.m */; };
+		FC660D9220F049D300915709 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC660D9020F049D200915709 /* TweetCell.m */; };
 		FCB4B51020EF3D1600CF834A /* SingleTweetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB4B50F20EF3D1600CF834A /* SingleTweetViewController.m */; };
-		FCB538F320EBDA19000A0934 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB538F120EBDA19000A0934 /* TweetCell.m */; };
 		FCB81C8E20F0340D00FAE97E /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB81C8D20F0340D00FAE97E /* ProfileViewController.m */; };
 		FCC3CB1A20EC3F2D00302794 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCC3CB1920EC3F2D00302794 /* ComposeViewController.m */; };
 /* End PBXBuildFile section */
@@ -49,10 +49,10 @@
 		FC10D62E20EACAE7001497B5 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		FC10D63020EAD268001497B5 /* Tweet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
 		FC10D63120EAD268001497B5 /* Tweet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		FC660D9020F049D200915709 /* TweetCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TweetCell.m; path = "/Users/skhezri/Desktop/CodePath Labs /Twitter/twitter/Views/TweetCell.m"; sourceTree = "<absolute>"; };
+		FC660D9120F049D300915709 /* TweetCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TweetCell.h; path = "/Users/skhezri/Desktop/CodePath Labs /Twitter/twitter/Views/TweetCell.h"; sourceTree = "<absolute>"; };
 		FCB4B50E20EF3D1600CF834A /* SingleTweetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SingleTweetViewController.h; sourceTree = "<group>"; };
 		FCB4B50F20EF3D1600CF834A /* SingleTweetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SingleTweetViewController.m; sourceTree = "<group>"; };
-		FCB538F120EBDA19000A0934 /* TweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCell.m; sourceTree = SOURCE_ROOT; };
-		FCB538F220EBDA19000A0934 /* TweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCell.h; sourceTree = SOURCE_ROOT; };
 		FCB81C8C20F0340D00FAE97E /* ProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		FCB81C8D20F0340D00FAE97E /* ProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		FCC3CB1820EC3F2D00302794 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
@@ -140,8 +140,8 @@
 		6AD278FF20BCBF280085BC29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FCB538F220EBDA19000A0934 /* TweetCell.h */,
-				FCB538F120EBDA19000A0934 /* TweetCell.m */,
+				FC660D9120F049D300915709 /* TweetCell.h */,
+				FC660D9020F049D200915709 /* TweetCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -284,7 +284,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCB4B51020EF3D1600CF834A /* SingleTweetViewController.m in Sources */,
-				FCB538F320EBDA19000A0934 /* TweetCell.m in Sources */,
 				6AD278F320BCA6020085BC29 /* BDBOAuth1SessionManager+SFAuthenticationSession.m in Sources */,
 				FC10D62F20EACAE7001497B5 /* User.m in Sources */,
 				FCC3CB1A20EC3F2D00302794 /* ComposeViewController.m in Sources */,
@@ -292,6 +291,7 @@
 				FC10D63220EAD268001497B5 /* Tweet.m in Sources */,
 				6AD2790620BCC0380085BC29 /* LoginViewController.m in Sources */,
 				6AD278DA20BC4B950085BC29 /* AppDelegate.m in Sources */,
+				FC660D9220F049D300915709 /* TweetCell.m in Sources */,
 				6AD278F620BCB68B0085BC29 /* APIManager.m in Sources */,
 				FCB81C8E20F0340D00FAE97E /* ProfileViewController.m in Sources */,
 				6AD2790920BCC04D0085BC29 /* TimelineViewController.m in Sources */,

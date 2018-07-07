@@ -10,6 +10,7 @@
 
 @implementation User
 
+//initializes the user object 
 -(instancetype) initWithDictionary:(NSDictionary *)dictionary{
     self=[super init];
     if(self){

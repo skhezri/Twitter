@@ -14,9 +14,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
+
+//Method that connects to the favorite button once it is tapped (changes icon color and favorite count amount)
 - (IBAction)didTapFavorite:(UIButton *)sender {
+    //Increases favorite count
     if(self.tweet.favorited==NO){
         self.tweet.favorited=YES;
         self.tweet.favoriteCount+=1;
@@ -30,6 +32,7 @@
             }
         }];
     } else{
+        //Decreases favorite count
         self.tweet.favorited=NO;
         self.tweet.favoriteCount-=1;
         self.favoriteButton.selected=NO;
@@ -45,7 +48,9 @@
 
     [self refreshFavoriteData];
 }
+//Method that connects to the retweet button once it is tapped (changes icon color and retweet count amount)
 - (IBAction)didTapRetweet:(UIButton *)sender {
+   //Increases retweet count amount
     if(self.tweet.retweeted==NO){
         self.tweet.retweeted=YES;
         self.tweet.retweetCount+=1;
@@ -59,6 +64,7 @@
             }
         }];
     }
+    //Decreases retweet count amount
     else{
         self.tweet.retweeted=NO;
         self.tweet.retweetCount-=1;
@@ -85,6 +91,7 @@
 
     // Configure the view for the selected state
 }
+//Sets all of the tweet properties on each cell on the table view (specific to the user)
 -(void) setTweet:(Tweet *)tweet{
     _tweet=tweet;
     self.tweetText.text=tweet.text;
@@ -96,12 +103,12 @@
     self.favoriteCountLabel.text= [NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
     [self.profilePic setImageWithURL:tweet.user.profilePic];
 }
-
+//Updates favorite count label
 -(void) refreshFavoriteData{
     NSString* favCountString=[NSString stringWithFormat:@"%i", self.tweet.favoriteCount];
     self.favoriteCountLabel.text=favCountString;
 }
-
+//Updates retweet count label 
 -(void) refreshRetweetData{
     NSString* retweetCountString= [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
     self.retweetCountLabel.text=retweetCountString;
